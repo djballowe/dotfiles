@@ -1,0 +1,32 @@
+[window]
+startup_mode = "Maximized"
+opacity = 1.0
+blur = true
+padding = { x = 5, y = 5 }
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font]
+size = 10.5
+
+[colors]
+primary = {background = '#2d353b', foreground = '#d3c6aa'}
+normal = {black = '#475258', red = '#e67e80', green = '#a7c080', yellow = '#dbbc7f', blue = '#7fbbb3', magenta = '#d699b6', cyan = '#83c092', white = '#d3c6aa'}
+bright = {black = '#475258', red = '#e67e80', green = '#a7c080', yellow = '#dbbc7f', blue = '#7fbbb3', magenta = '#d699b6', cyan = '#83c092', white = '#d3c6aa'}
+cursor = { text = "#e69975", cursor = "#e69975" }
+
+[mouse]
+hide_when_typing = true
+
+[env]
+TERM = "xterm-256color"
+
+[terminal.shell]
+program = "/bin/bash"
+args = ["-c", "tmux attach || tmux new-session", "&& neofetch"]

@@ -8,5 +8,5 @@ polybar-msg cmd quit
 
 # Launch bar
 echo "---" | tee -a /tmp/polybar.log
-polybar -c "~/.config/i3/polybar/config.ini" 2>&1 | tee -a /tmp/polybar.log & disown
+polybar -c "~/.config/polybar/config.ini" 2>&1 | tee -a /tmp/polybar.log & disown
 echo "Bar launched..."

@@ -178,7 +178,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # polybar
-exec_always --no-startup-id ~/.config/i3/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # picom (window animations)
 exec --no-startup-id picom

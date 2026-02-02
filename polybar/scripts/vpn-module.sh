@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ~/.config/i3/script-vars
+source ~/code/github/dotfiles/script-vars
 
 mullvad_status=$(mullvad status)
 connection_status=$(echo "$mullvad_status" | cut -d ' ' -f1 | tr '[:upper:]' '[:lower:]')

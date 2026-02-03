@@ -4,7 +4,7 @@ COLOR="%{F#A7C080}"
 END="%{F-}"
 
 solaar_source_path="/home/david/build/Solaar/bin/solaar"
-battery_string=$("$solaar_source_path" show | sed -n '/1: MX Master 3S/,/Battery/p' | grep Battery)
+battery_string=$("$solaar_source_path" show 2>/dev/null | sed -n '/1: MX Master 3S/,/Battery/p' | grep Battery)
 battery_percent=$(echo "$battery_string" | awk '{sub(/%/, ""); sub(/,/, ""); print $2}')
 battery_status=$(echo "$battery_string" | awk '{sub(/\./, " "); sub(/\./, ""); print $4}')
 

@@ -200,7 +200,6 @@ client.focused          #A7C080 #A7C080 #A7C080 #A7C080 #A7C080
 # thigh gaps
 gaps inner 5px
 
-
 # open programs and assign windows on start
 assign [class="Alacritty"] workspace $ws1
 assign [class="Brave-browser"] workspace $ws2
@@ -216,3 +215,9 @@ exec --no-startup-id "nohup /home/david/build/Solaar/bin/solaar -w hide &"
 
 # lock screen shortcut
 bindsym $mod+Shift+m exec slock
+
+# Selection
+bindsym F4 exec --no-startup-id maim -s ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+
+# fullscreen
+bindsym Shift+F4 exec --no-startup-id maim ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png

@@ -190,7 +190,7 @@ exec --no-startup-id dunst
 exec mullvad-vpn
 
 # wallpaper
-exec_always feh --bg-fill ~/Pictures/papes/black-sand.jpg
+exec_always feh --bg-fill ~/pictures/papes/black-sand.jpg
 
 # borders
 for_window [class="^.*"] border pixel 1

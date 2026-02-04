@@ -18,12 +18,11 @@ alias sleep="systemctl suspend"
 alias claude_docker="docker exec -it claude_code /bin/bash"
 alias docker_up="sudo docker compose --env-file "$DOCKER_SECRETS_PATH" up -d"
 alias docker_down="sudo docker compose --env-file "$DOCKER_SECRETS_PATH" down"
+alias docker_restart="sudo docker compose --env-file "$DOCKER_SECRETS_PATH" down && sudo docker compose --env-file "$DOCKER_SECRETS_PATH" up -d"
 alias solaar="~/build/Solaar/bin/solaar"
 
 # theme 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-ENABLE_CORRECTION="true"
 
 plugins=(zsh-autosuggestions git)
 

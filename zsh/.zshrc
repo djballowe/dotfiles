@@ -15,11 +15,13 @@ alias sshmedia="mullvad-exclude ssh -i "$SSH_PATH" -p "$SERVER_SSH_PORT" "$SERVE
 alias sftpmedia="mullvad-exclude sftp -i "$SSH_PATH" -P "$SERVER_SSH_PORT" "$SERVER_USER"@"$SERVER_IP""
 alias vim="nvim"
 alias sleep="systemctl suspend"
-alias claude_docker="docker exec -it claude_code /bin/bash"
+alias claude_docker="docker exec -it claude_code /bin/zsh"
+alias claude_docker_root="docker exec -u root -it claude_code /bin/zsh"
 alias docker_up="sudo docker compose --env-file "$DOCKER_SECRETS_PATH" up -d"
 alias docker_down="sudo docker compose --env-file "$DOCKER_SECRETS_PATH" down"
 alias docker_restart="sudo docker compose --env-file "$DOCKER_SECRETS_PATH" down && sudo docker compose --env-file "$DOCKER_SECRETS_PATH" up -d"
 alias solaar="~/build/Solaar/bin/solaar"
+alias gp_update="git config --global push.autoSetupRemote true"
 
 # theme 
 ZSH_THEME="powerlevel10k/powerlevel10k"

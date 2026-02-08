@@ -3,3 +3,24 @@
     follow = mouse
     width = 300
     height = (0, 500)
+    origin = top-right
+    offset = (10, 10)
+    font = JetBrainsMono Nerd Font 10
+    frame_width = 1
+    frame_color = "#A7C080"
+    separator_color = frame
+
+[urgency_low]
+    background = "#2D353B"
+    foreground = "#D3C6AA"
+    frame_color = "#425047"
+
+[urgency_normal]
+    background = "#2D353B"
+    foreground = "#D3C6AA"
+    frame_color = "#A7C080"
+
+[urgency_critical]
+    background = "#2D353B"
+    foreground = "#D3C6AA"
+    frame_color = "#E67E80"

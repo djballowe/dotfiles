@@ -217,7 +217,7 @@ exec --no-startup-id "nohup /home/david/build/Solaar/bin/solaar -w hide &"
 bindsym $mod+Shift+m exec slock
 
 # Selection
-bindsym Home exec --no-startup-id maim -s ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym Home exec --no-startup-id "f=~/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && maim -s $f && xclip -selection clipboard -t image/png < $f"
 
 # fullscreen
 bindsym $mod+Home exec --no-startup-id maim ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png

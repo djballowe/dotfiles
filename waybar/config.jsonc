@@ -112,10 +112,11 @@
         // }
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "timezone": "America/Los_Angeles",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
+        "format-alt": "{:%Y-%m-%d}",
+        "format": "{:%I:%M %p}"
+    },    
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false

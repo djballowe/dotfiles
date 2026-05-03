@@ -3,3 +3,38 @@
     follow = mouse
     width = 300
     height = (0, 500)
+    origin = top-right
+    offset = 10x10
+    gap_size = 6
+    padding = 10
+    horizontal_padding = 12
+    frame_width = 2
+    corner_radius = 6
+    font = JetBrainsMono Nerd Font 10
+    line_height = 2
+    markup = full
+    format = "<b>%s</b>\n%b"
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    transparency = 6
+    stack_duplicates = false
+    notification_limit = 5
+
+[urgency_low]
+    background = "#2D353B"
+    foreground = "#859289"
+    frame_color = "#4A555B"
+    timeout = 4
+
+[urgency_normal]
+    background = "#2D353B"
+    foreground = "#D3C6AA"
+    frame_color = "#A7C080"
+    timeout = 6
+
+[urgency_critical]
+    background = "#2D353B"
+    foreground = "#D3C6AA"
+    frame_color = "#E67E80"
+    timeout = 0

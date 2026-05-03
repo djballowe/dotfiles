@@ -13,7 +13,8 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # System
 alias vim="nvim"
 alias sleep="systemctl suspend"
-alias shutdown="sudo shutdown now"
+alias shutdown='pkill -SIGTERM brave; shutdown now'
+alias reboot='pkill -SIGTERM brave; reboot'
 alias tfetch_source='~/Github/tesla-fetch/tfetch'
 alias solaar="~/build/Solaar/bin/solaar"
 alias gp_update="git config --global push.autoSetupRemote true"

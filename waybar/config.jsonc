@@ -10,12 +10,9 @@
         "group/datetime"
     ],
     "modules-right": [
-        "group/cpuram",
-        "group/network",
-        "group/system"
+        "group/cpuramgpu",
+        "group/network"
     ],
-
-
     "custom/openbracket": {
         "format": "[",
         "tooltip": false
@@ -28,7 +25,10 @@
       "format": "|",
       "tooltip": false
     },
-
+    "custom/dot": {
+      "format": "",
+      "tooltip": false
+    },
     "group/Utilities":{
         "orientation": "horizontal",
         "modules":[
@@ -64,33 +64,6 @@
             "default": "•"
         }
     },
-
-    "niri/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "default": "•"
-        }
-    },
-
-    "mpris": {
-        "format": "[   {status_icon} | {dynamic} ]",
-        "interval": 1,
-        "dynamic-len": 40,
-        "status-icons": {
-            "playing": "▶",
-            "paused": "⏸",
-            "stopped": ""
-        },
-        "dynamic-order": ["artist"]
-    },
-
-
     "group/windows": {
         "orientation":"horizontal",
         "modules":[
@@ -111,15 +84,36 @@
         "min-length": 0,
         "all-outputs": true
     },
-    "group/cpuram": {
+    "group/cpuramgpu": {
         "orientation": "horizontal",
         "modules": [
             "custom/openbracket",
             "cpu",
+            "custom/dot",
+            "custom/cpu-temp",
+            "custom/split",
+            "custom/gpu-usage",
+            "custom/dot",
+            "custom/gpu-temp",
             "custom/split",
             "memory",
             "custom/closebracket"
         ]
+    },
+    "custom/gpu-usage": {
+        "exec": "cat /sys/class/drm/card1/device/gpu_busy_percent",
+        "format": "󰢮 {}%",
+        "interval": 5
+    },
+    "custom/gpu-temp": {
+        "exec":  "awk '{printf \"%.0f\", $1/1000}' /sys/class/hwmon/hwmon1/temp1_input",
+        "format": "{}°C",
+        "interval": 5
+    },
+    "custom/cpu-temp": {
+        "exec":  "awk '{printf \"%.0f\", $1/1000}' /sys/class/hwmon/hwmon4/temp1_input",
+        "format": "{}°C",
+        "interval": 5
     },
     "cpu": {
         "format": ": {usage}%",
@@ -214,8 +208,7 @@
     },
     "network": {
         "interface": "eno1",
-        "format-ethernet": "󰈀 LAN",
-        "tooltip-format": "{ipaddr}"
+        "format-ethernet": "󰈀 LAN | {ipaddr}"
     },
     "custom/bluetooth": {
     "format": "{}",

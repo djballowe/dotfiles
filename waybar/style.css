@@ -22,6 +22,10 @@
   margin: 0 5px;
 }
 
+#custom-dot {
+  margin-right: 2px;
+}
+
 /* idk what all this does */
 window#waybar {
   background-color: transparent;
@@ -154,6 +158,9 @@ button {
 #memory,
 #custom-clipboard,
 #custom-bluetooth,
+#custom-gpu-usage,
+#custom-gpu-temp,
+#custom-cpu-temp,
 #network {
   padding: 0 10px;
 }

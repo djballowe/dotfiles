@@ -24,6 +24,11 @@
 
 #custom-dot {
   margin-right: 2px;
+  font-size: 5px;
+}
+
+#custom-split {
+  opacity: 0.3;
 }
 
 /* idk what all this does */
@@ -86,18 +91,6 @@ button {
   border-radius: 8px;
 }
 
-#custom-arch:hover {
-  color: @color1;
-}
-
-#custom-powerprofile:hover {
-  color: @color1
-}
-
-#custom-themeswitcher:hover {
-  color: @color1;
-}
-
 /* workspace pannel */
 #workspaces button {
   min-width: 0;
@@ -105,10 +98,6 @@ button {
   background-color: transparent;
   color: @text;
   border-radius: 0;
-}
-
-#workspaces button:hover {
-  background-color: @second-background;
 }
 
 #workspaces button.active {
@@ -128,21 +117,6 @@ button {
 .modules-right>widget:last-child>#workspaces {
   margin-right: 0;
 }
-
-/* media player */
-#mpris {
-  margin: 0 0 0 5px;
-  padding: 0 9px;
-  background-color: @background;
-  color: @text;
-}
-
-#mpris.playing {
-  background-color: @color3;
-  border-radius: 2px;
-  color: @background;
-}
-
 
 /* center module  */
 #window {

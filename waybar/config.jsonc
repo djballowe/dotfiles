@@ -2,6 +2,7 @@
     "height": 40,
     "spacing": 7, 
     "modules-left": [
+        "custom/arch",
         "group/Utilities",
         "group/workspaces",
         "group/windows"
@@ -32,7 +33,6 @@
     "group/Utilities":{
         "orientation": "horizontal",
         "modules":[
-            "custom/arch"
         ]
     },
     "custom/arch": {
@@ -47,23 +47,6 @@
             "custom/closebracket"
         ]
     },
-    "hyprland/workspaces": {
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "enable-bar-scroll": true,
-        "disable-scroll-wraparound": true,
-        "active-only": false,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "default": "•"
-        }
-    },
     "group/windows": {
         "orientation":"horizontal",
         "modules":[
@@ -72,17 +55,8 @@
             "custom/closebracket"
         ]
     },
-    "hyprland/window": {
-        "format": "{title}", 
-        "max-length": 20,
-        "min-length": 0,
-        "all-outputs": true
-    },
-    "niri/window": {
-        "format": "{title}", 
-        "max-length": 20,
-        "min-length": 0,
-        "all-outputs": true
+    "group/utilities": {
+
     },
     "group/cpuramgpu": {
         "orientation": "horizontal",
@@ -102,7 +76,7 @@
     },
     "custom/gpu-usage": {
         "exec": "cat /sys/class/drm/card1/device/gpu_busy_percent",
-        "format": "󰢮 {}%",
+        "format": "<span color='#A7C080'>󰢮</span> {}%",
         "interval": 5
     },
     "custom/gpu-temp": {
@@ -116,14 +90,43 @@
         "interval": 5
     },
     "cpu": {
-        "format": ": {usage}%",
+        "format": "<span color='#A7C080'></span>: {usage}%",
         "tooltip": false,
         "interval": 2
     },
     "memory":{
-        "format": ": {}%",
+        "format": "<span color='#A7C080'></span>: {}%",
         "tooltip": false,
         "interval": 2
+    },
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "enable-bar-scroll": true,
+        "disable-scroll-wraparound": true,
+        "active-only": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "default": "•"
+        }
+    },
+    "hyprland/window": {
+        "format": "{title}", 
+        "max-length": 20,
+        "min-length": 0,
+        "all-outputs": true
+    },
+    "niri/window": {
+        "format": "{title}", 
+        "max-length": 20,
+        "min-length": 0,
+        "all-outputs": true
     },
     "group/brightvol": {
         "orientation": "horizontal",
@@ -208,13 +211,7 @@
     },
     "network": {
         "interface": "eno1",
-        "format-ethernet": "󰈀 LAN | {ipaddr}"
-    },
-    "custom/bluetooth": {
-    "format": "{}",
-    "exec": "~/.config/waybar/scripts/bluetooth_status.sh",
-    "interval": 5,
-    "on-click": "blueman-manager"
+        "format-ethernet": "<span color='#A7C080'>󰈀</span> LAN <span alpha='30%'>|</span> {ipaddr}"
     },
     "group/clock": {
         "orientation": "horizontal",

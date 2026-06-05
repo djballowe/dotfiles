@@ -19,6 +19,7 @@ alias tfetch_source='~/Github/tesla-fetch/tfetch'
 alias solaar="~/build/Solaar/bin/solaar"
 alias gp_update="git config --global push.autoSetupRemote true"
 alias dunst_restart="killall dunst && dunst &"
+alias waybar_restart="pkill -SIGUSR2 waybar"
 
 # Server
 alias sshserver="mullvad-exclude ssh -i "$SSH_PATH" -p "$SERVER_SSH_PORT" "$SERVER_USER"@"$SERVER_IP""

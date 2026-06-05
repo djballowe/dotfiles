@@ -3,6 +3,7 @@
     "spacing": 7, 
     "modules-left": [
         "custom/arch",
+        "idle_inhibitor",
         "group/Utilities",
         "group/workspaces",
         "group/windows"
@@ -122,47 +123,34 @@
         "min-length": 0,
         "all-outputs": true
     },
-    "niri/window": {
-        "format": "{title}", 
-        "max-length": 20,
-        "min-length": 0,
-        "all-outputs": true
-    },
-    "group/brightvol": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/openbracket",
-            "backlight",
-            "custom/split",
-            "wireplumber",
-            "custom/closebracket"
-        ]
-    },
-    "wireplumber": {
-        "scroll-step": 5,
-        "format": "{icon}{volume}%",
-        "format-bluetooth": "{icon}{volume}% ",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [" :", " :", " :"]
-        },
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-click-right": "pavucontrol"
-    },
     "group/network": {
         "orientation": "horizontal",
         "modules": [
             "custom/openbracket",
-            "network",
+            "network#lan",
+            "custom/dot",
+            "network#ip",
+            "custom/split",
+            "custom/vpn",
             "custom/closebracket"
         ]
+    },
+    "custom/vpn": {
+        "exec": "~/.config/waybar/scripts/vpn-module.sh",
+        "on-click": "~/.config/waybar/scripts/vpn-click.sh && pkill -RTMIN+1 waybar",
+        "max-length": 22,
+        "min-length": 22,
+        "signal": 1,
+        "interval": 2,
+        "format": "{}"
+    },
+    "network#lan": {
+        "interface": "eno1",
+        "format-ethernet": "<span color='#A7C080'>󰈀</span> LAN"
+    },
+    "network#ip": {
+        "interface": "eno1",
+        "format-ethernet": "{ipaddr}"
     },
     "group/datetime": {
         "orientation": "horizontal",
@@ -191,27 +179,12 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "onclick" : "kalender"
     },
-    "custom/clipboard": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "~/.config/waybar/scripts/clipboard_menu.sh"
-    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
         }
-    },
-    "custom/swaync": {
-      "format": "",
-      "exec": "swaync-client -swb",
-      "on-click": "swaync-client --toggle-panel",
-      "interval": 0
-    },
-    "network": {
-        "interface": "eno1",
-        "format-ethernet": "<span color='#A7C080'>󰈀</span> LAN <span alpha='30%'>|</span> {ipaddr}"
     },
     "group/clock": {
         "orientation": "horizontal",
@@ -221,20 +194,8 @@
             "custom/closebracket"
         ]
     },
-    "custom/cava": {
-        "exec": "~/.config/waybar/scripts/cava_wrapper.sh",
-        "format": "♪ {}",
-        "restart-interval": 1,
-        "max-length": 50,
-        "on-click": "pkill cava"
-    },
     "tray": {
         "icon-size": 14,
         "spacing": 10
-    },
-    "custom/notifications": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "~/.config/waybar/scripts/notification_center.sh"
     }
 }]

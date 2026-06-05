@@ -127,7 +127,6 @@ button {
 
 /* module general styles */
 #clock,
-#battery,
 #cpu,
 #memory,
 #custom-clipboard,
@@ -135,16 +134,13 @@ button {
 #custom-gpu-usage,
 #custom-gpu-temp,
 #custom-cpu-temp,
-#network {
+#network.lan,
+#network.ip,
+#custom-vpn {
   padding: 0 10px;
 }
 
-#clock:hover,
-#custom-cpu:hover,
-#network:hover,
-#idle_inhibitor:hover,
-#custom-swaync:hover,
-#wireplumber:hover {
+#idle_inhibitor:hover {
   color: @color1;
 }
 

@@ -12,6 +12,7 @@
         "group/datetime"
     ],
     "modules-right": [
+        "group/storage",
         "group/cpuramgpu",
         "group/network"
     ],
@@ -56,9 +57,6 @@
             "custom/closebracket"
         ]
     },
-    "group/utilities": {
-
-    },
     "group/cpuramgpu": {
         "orientation": "horizontal",
         "modules": [
@@ -74,6 +72,26 @@
             "memory",
             "custom/closebracket"
         ]
+    },
+    "group/storage": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/openbracket",
+            "custom/storage_root",
+            "custom/split",
+            "custom/storage_server",
+            "custom/closebracket"
+        ]
+    },
+    "custom/storage_server": {
+        "exec": "~/.config/waybar/scripts/drive_status.sh",
+        "format": "<span color='#A7C080'> media: </span>{}",
+        "interval": 1800
+    },
+    "custom/storage_root": {
+        "exec": "~/.config/waybar/scripts/drive_status_root.sh",
+        "format": "<span color='#A7C080'> root: </span>{}",
+        "interval": 1800
     },
     "custom/gpu-usage": {
         "exec": "cat /sys/class/drm/card1/device/gpu_busy_percent",

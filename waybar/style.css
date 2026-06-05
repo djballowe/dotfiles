@@ -4,7 +4,6 @@
 @define-color text #D3C6AA;
 @define-color borders #475258;
 @define-color focused #A7C080;
-@define-color focused2 #83C092;
 @define-color color1 #7FBBB3;
 @define-color color2 #D699B6;
 @define-color color3 #A7C080;
@@ -101,7 +100,7 @@ button {
 }
 
 #workspaces button.active {
-  color: @focused2;
+  color: @focused;
   background-color: @second-background;
 }
 
@@ -143,11 +142,15 @@ button {
 }
 
 #idle_inhibitor:hover {
-  color: @color1;
+  color: @focused;
 }
 
 #idle_inhibitor {
   padding: 0 10px 0 0;
+}
+
+#custom-arch {
+  color: @focused
 }
 
 /* Remaining Modules */

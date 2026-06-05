@@ -189,11 +189,11 @@
         ]
     },
     "clock#date": {
-        "format": "{:%b %d, %Y}",
+        "format": "<span color='#A7C080'>󰃭</span> {:%b %d, %Y}",
         "tooltip": false
     },
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": "<span color='#A7C080'></span> {:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "onclick" : "kalender"
     },

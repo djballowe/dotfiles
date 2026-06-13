@@ -1,5 +1,5 @@
 [{
-    "height": 40,
+    "height": 45,
     "spacing": 7, 
     "modules-left": [
         "custom/arch",
@@ -96,7 +96,8 @@
     "custom/gpu-usage": {
         "exec": "cat /sys/class/drm/card1/device/gpu_busy_percent",
         "format": "<span color='#A7C080'>󰢮</span> {}%",
-        "interval": 5
+        "interval": 5,
+        "min-length": 6
     },
     "custom/gpu-temp": {
         "exec":  "awk '{printf \"%.0f\", $1/1000}' /sys/class/hwmon/hwmon1/temp1_input",
@@ -111,7 +112,8 @@
     "cpu": {
         "format": "<span color='#A7C080'></span>: {usage}%",
         "tooltip": false,
-        "interval": 2
+        "interval": 2,
+        "min-length": 6
     },
     "memory":{
         "format": "<span color='#A7C080'></span>: {}%",
@@ -189,11 +191,11 @@
         ]
     },
     "clock#date": {
-        "format": "<span color='#A7C080'>󰃭</span> {:%b %d, %Y}",
+        "format": "<span color='#A7C080'>󰃭 </span> {:%b %d, %Y}",
         "tooltip": false
     },
     "clock": {
-        "format": "<span color='#A7C080'></span> {:%I:%M %p}",
+        "format": "<span color='#A7C080'> </span> {:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "onclick" : "kalender"
     },

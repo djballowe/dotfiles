@@ -16,14 +16,9 @@ alias sleep="systemctl suspend"
 alias shutdown='pkill -SIGTERM brave; shutdown now'
 alias reboot='pkill -SIGTERM brave; reboot'
 alias tfetch_source='~/Github/tesla-fetch/tfetch'
-alias solaar="~/build/Solaar/bin/solaar"
 alias gp_update="git config --global push.autoSetupRemote true"
 alias dunst_restart="killall dunst && dunst &"
 alias waybar_restart="pkill -SIGUSR2 waybar"
-
-# Server
-alias sshserver="mullvad-exclude ssh -i "$SSH_PATH" -p "$SERVER_SSH_PORT" "$SERVER_USER"@"$SERVER_IP""
-alias sftpserver="mullvad-exclude sftp -i "$SSH_PATH" -P "$SERVER_SSH_PORT" "$SERVER_USER"@"$SERVER_IP""
 
 # Docker
 alias claude_docker="docker exec -it claude_code /bin/zsh"

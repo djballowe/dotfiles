@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/bin:go/bin:$PATH"
 
 export ZSH="$HOME/.oh-my-zsh"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
@@ -19,7 +19,7 @@ alias tfetch_source='~/Github/tesla-fetch/tfetch'
 alias gp_update="git config --global push.autoSetupRemote true"
 alias dunst_restart="killall dunst && dunst &"
 alias waybar_restart="pkill -SIGUSR2 waybar"
-
+ 
 # Docker
 alias claude_docker="docker exec -it claude_code /bin/zsh"
 alias claude_docker_root="docker exec -u root -it claude_code /bin/zsh"

@@ -21,8 +21,7 @@ alias dunst_restart="killall dunst && dunst &"
 alias waybar_restart="pkill -SIGUSR2 waybar"
  
 # Docker
-alias claude_docker="docker exec -it claude_code /bin/zsh"
-alias claude_docker_root="docker exec -u root -it claude_code /bin/zsh"
+alias codex="docker compose --env-file ~/code/github/codex-jail/.env run --rm codex"
 alias docker_up="sudo docker compose --env-file "$DOCKER_SECRETS_PATH" up -d"
 alias docker_down="sudo docker compose --env-file "$DOCKER_SECRETS_PATH" down"
 alias docker_pull="sudo docker compose --env-file "$DOCKER_SECRETS_PATH" pull"

@@ -18,7 +18,7 @@ All applications share the **Everforest** color scheme. When editing any config,
 
 The repo is organized by application, one directory per tool:
 
-- **hypr/** — Hyprland, Hyprpaper, Hyprlock, and Hypridle configuration. `hyprland.conf` sources `colors.conf`; `scripts/` contains helpers for a headless Sunshine streaming display.
+- **hypr/** — Hyprland, Hyprpaper, Hyprlock, and Hypridle configuration. `hyprland.lua` requires `colors.lua`; the legacy `hyprland.conf` is retained temporarily for migration rollback. Hyprlock continues to source `colors.conf`; keep the Lua and Hyprlang color files synchronized. `scripts/` contains helpers for a headless Sunshine streaming display.
 - **waybar/** — Wayland status bar configured with JSONC and CSS, plus Mullvad VPN and drive-status scripts.
 - **i3/** — Window manager config and keybindings (Super as mod key, vim-style navigation with hjkl). Startup block launches polybar, picom, dunst, mullvad, and opens default applications on assigned workspaces.
 - **polybar/** — Status bar with custom shell scripts for VPN status, remote server monitoring (Plex storage, disc status), and MX Master mouse battery. Scripts source shared variables from `script-vars`.
@@ -36,7 +36,7 @@ The repo is organized by application, one directory per tool:
 - `script-vars` is sourced by Polybar and Waybar scripts for shared server connection details (IP, SSH port, key path) and color formatting variables.
 - The zsh config (`zsh/.zshenv`) duplicates some of the same server variables — keep both in sync when changing server details.
 - i3 config references polybar launch script (`polybar/launch.sh`), picom config, and wallpaper path (`~/pictures/papes/black-sand.jpg`).
-- Hyprland config sources other files in `hypr/`, references Waybar, and invokes scripts under `hypr/scripts/`.
+- Hyprland's Lua config requires other Lua files in `hypr/`, references Waybar, and invokes scripts under `hypr/scripts/`.
 - Polybar and Waybar contain parallel VPN and drive-status scripts. Check both when changing shared behavior, while preserving bar-specific formatting.
 
 ## Editing and Validation

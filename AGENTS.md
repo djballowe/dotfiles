@@ -4,7 +4,7 @@ This file provides guidance to coding agents working in this repository.
 
 ## Overview
 
-Personal dotfiles for a minimal, keyboard-driven Arch Linux desktop. The repo contains both a Wayland setup (Hyprland and Waybar) and an X11 setup (i3, Polybar, and Picom). There are no build tools, test suites, or install scripts — configs are deployed manually via symlinks to `~/.config/` or `~/`.
+Personal dotfiles for a minimal, keyboard-driven Arch Linux desktop. The primary desktop is a Wayland setup built around Hyprland and Waybar, with additional configs for Picom and other applications. There are no build tools, test suites, or install scripts — configs are deployed manually via symlinks to `~/.config/` or `~/`.
 
 ## Theme
 
@@ -18,10 +18,8 @@ All applications share the **Everforest** color scheme. When editing any config,
 
 The repo is organized by application, one directory per tool:
 
-- **hypr/** — Hyprland, Hyprpaper, Hyprlock, and Hypridle configuration. `hyprland.lua` requires `colors.lua`; the legacy `hyprland.conf` is retained temporarily for migration rollback. Hyprlock continues to source `colors.conf`; keep the Lua and Hyprlang color files synchronized. `scripts/` contains helpers for a headless Sunshine streaming display.
+- **hypr/** — Hyprland, Hyprpaper, Hyprlock, and Hypridle configuration. `hyprland.lua` requires `colors.lua`. Hyprlock continues to source `colors.conf`; keep the Lua and Hyprlang color files synchronized. `scripts/` contains helpers for a headless Sunshine streaming display.
 - **waybar/** — Wayland status bar configured with JSONC and CSS, plus Mullvad VPN and drive-status scripts.
-- **i3/** — Window manager config and keybindings (Super as mod key, vim-style navigation with hjkl). Startup block launches polybar, picom, dunst, mullvad, and opens default applications on assigned workspaces.
-- **polybar/** — Status bar with custom shell scripts for VPN status, remote server monitoring (Plex storage, disc status), and MX Master mouse battery. Scripts source shared variables from `script-vars`.
 - **alacritty/** — Terminal emulator. Auto-attaches to tmux on launch via `[shell]` config.
 - **tmux/** — Terminal multiplexer. Vi-mode copy, mouse scrolling, base-index 1.
 - **zsh/** — Shell config using Oh-My-Zsh + PowerLevel10k. Aliases map `vim` to `nvim`. SSH aliases use Mullvad VPN exclusion (`mullvad-exclude`).
@@ -33,11 +31,9 @@ The repo is organized by application, one directory per tool:
 
 ## Key Relationships
 
-- `script-vars` is sourced by Polybar and Waybar scripts for shared server connection details (IP, SSH port, key path) and color formatting variables.
+- `script-vars` is sourced by Waybar scripts for shared server connection details (IP, SSH port, key path) and color formatting variables.
 - The zsh config (`zsh/.zshenv`) duplicates some of the same server variables — keep both in sync when changing server details.
-- i3 config references polybar launch script (`polybar/launch.sh`), picom config, and wallpaper path (`~/pictures/papes/black-sand.jpg`).
 - Hyprland's Lua config requires other Lua files in `hypr/`, references Waybar, and invokes scripts under `hypr/scripts/`.
-- Polybar and Waybar contain parallel VPN and drive-status scripts. Check both when changing shared behavior, while preserving bar-specific formatting.
 
 ## Editing and Validation
 

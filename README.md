@@ -1,3 +1,2 @@
 ### Screenshots
-#### i3
 ![screenshot](./screenshots/2026-02-02_21-24-23.png)
